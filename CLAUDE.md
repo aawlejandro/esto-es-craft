@@ -4,7 +4,7 @@ This file provides context and guidance for AI assistants (e.g., Claude Code) wo
 
 ## Repository Overview
 
-**Name:** curly-octo-dollop
+**Name:** esto-es-craft
 **Status:** Early-stage / scaffold repository
 **Current content:** Minimal — only a `README.md` exists at the time of writing.
 
@@ -13,7 +13,7 @@ This repository was initialized with a single commit and is ready for a project 
 ## Repository Structure
 
 ```
-curly-octo-dollop/
+esto-es-craft/
 ├── README.md       # Project title placeholder
 └── CLAUDE.md       # This file
 ```
