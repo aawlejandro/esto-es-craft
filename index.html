@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EstoEsCraft</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #0f0f0f;
+      --color-surface: #1a1a1a;
+      --color-border: #2a2a2a;
+      --color-text: #e8e8e8;
+      --color-muted: #888;
+      --color-accent: #f5a623;
+      --color-craft: #e05c5c;
+      --color-productividad: #5cb8e0;
+      --color-conocimiento: #7ed67e;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 80px 24px 64px;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-accent);
+      margin: 32px auto 0;
+      border-radius: 2px;
+    }
+
+    .site-title {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+
+    .site-title span {
+      color: var(--color-accent);
+    }
+
+    .site-tagline {
+      margin-top: 20px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--color-muted);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 48px;
+    }
+
+    /* ── CARDS GRID ── */
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card--craft::before       { background: var(--color-craft); }
+    .card--productividad::before { background: var(--color-productividad); }
+    .card--conocimiento::before  { background: var(--color-conocimiento); }
+
+    .card:hover.card--craft       { border-color: var(--color-craft); }
+    .card:hover.card--productividad { border-color: var(--color-productividad); }
+    .card:hover.card--conocimiento  { border-color: var(--color-conocimiento); }
+
+    .card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .card--craft       .card-title { color: var(--color-craft); }
+    .card--productividad .card-title { color: var(--color-productividad); }
+    .card--conocimiento  .card-title { color: var(--color-conocimiento); }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">Esto<span>Es</span>Craft</h1>
+    <p class="site-tagline">
+      Un espacio donde el trabajo bien hecho se encuentra con la claridad mental.
+      Aquí exploramos cómo crear mejor, pensar con más intención y aprender de forma continua.
+    </p>
+  </header>
+
+  <main>
+    <p class="section-label">Temas del canal</p>
+
+    <div class="topics">
+
+      <div class="card card--craft">
+        <span class="card-icon">🔨</span>
+        <h2 class="card-title">Craft</h2>
+        <p class="card-desc">
+          El arte de hacer las cosas bien. Diseño, código, escritura y cualquier disciplina
+          donde la atención al detalle marca la diferencia entre lo bueno y lo extraordinario.
+        </p>
+      </div>
+
+      <div class="card card--productividad">
+        <span class="card-icon">⚡</span>
+        <h2 class="card-title">Productividad</h2>
+        <p class="card-desc">
+          Sistemas, flujos de trabajo y hábitos que te permiten hacer más con menos fricción.
+          No se trata de hacer más cosas, sino de hacer las cosas correctas con foco real.
+        </p>
+      </div>
+
+      <div class="card card--conocimiento">
+        <span class="card-icon">🌱</span>
+        <h2 class="card-title">Conocimiento</h2>
+        <p class="card-desc">
+          Cómo aprender, conectar ideas y construir un segundo cerebro. Gestión del
+          conocimiento personal para crecer de forma sostenida y con propósito.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Hecho con intención &mdash; <strong>EstoEsCraft</strong></p>
+  </footer>
+
+</body>
+</html>
